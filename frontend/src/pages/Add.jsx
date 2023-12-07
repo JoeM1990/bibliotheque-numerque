@@ -115,48 +115,23 @@ const Add = () => {
             <h2 className="m-2 p-2 font-open grid grid-col mb-2 text-sm font-medium text-black dark:text-white">
               Genre du livre
             </h2>
-            <label htmlFor="livre">
-              {" "}
-              Livre
-              <input
-                type="radio"
-                name="cat"
+
+              <select
+                //name="opinion"
                 required
-                value="livre"
-                id="livre"
+                aria-required="true"
+                autoComplete="off"
+                className="text-gray-900 m-2 p-4 w-96 rounded-lg shadow-md cursor-pointer font-normal"
                 onChange={(e) => setCat(e.target.value)}
-                className="m-2 p-2 text-white dark:text-white"
-                checked={cat === "livre"}
-              />
-            </label>
-            <label htmlFor="tfc">
-              {" "}
-              Tfc
-              <input
-                type="radio"
-                name="cat"
-                required
-                value="tfc"
-                id="tfc"
-                onChange={(e) => setCat(e.target.value)}
-                className="m-2 p-2"
-                checked={cat === "tfc"}
-              />
-            </label>
-            <label htmlFor="memoire">
-              {" "}
-              Memoire
-              <input
-                type="radio"
-                name="cat"
-                required
-                value="memoire"
-                id="memoire"
-                onChange={(e) => setCat(e.target.value)}
-                className="m-2 p-2"
-                checked={cat === "memoire"}
-              />
-            </label>
+                value={opinion}
+              >
+                <option>Livre</option>
+                <option>Tfc</option>
+                <option>Memoire</option>
+                <option>Journal</option>
+                <option>Magasine</option>
+              </select>
+           
            
             <label
               htmlFor="publisher"

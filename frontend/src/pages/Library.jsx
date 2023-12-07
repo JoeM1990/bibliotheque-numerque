@@ -36,15 +36,19 @@ const Library = () => {
       </Helmet>
 
       <div className="flex flex-row justify-between items-center lg:ml-10 mr-10">
-        {currentUser ? (
+        { (
           <h3 className="p-6 lg:m-6 font-poppins text-yellow-900 dark:text-yellow-600">
             Bienvenue dans ta bibliothèque numérique,{" "}
             <span className="font-bold">{currentUser?.username} </span>!
           </h3>
-        ) : (
-          <span></span>
-        )}
-        {currentUser ? (
+        )
+        //  : (
+        //   <span></span>
+        // )
+        
+        }
+
+        {/* {currentUser ? (
           <button
             onClick={logout}
             type="button"
@@ -55,10 +59,10 @@ const Library = () => {
           </button>
         ) : (
           <span>{navigate("/*")}</span>
-        )}
+        )} */}
       </div>
 
-      {currentUser ? (
+      {(
         <div className="lg:grid grid-cols-4 gap-2 justify-between lg:ml-24">
           {books.map((book) => (
             <div
@@ -72,11 +76,15 @@ const Library = () => {
                   className="rounded-lg h-72 w-64 p-1"
                 />
               )}
-              <Link to={`https://fakeapi-wqoi.onrender.com/books/${book.id}`}>
+
+              
+              {/* <Link to={`https://fakeapi-wqoi.onrender.com/books/${book.id}`}>
                 <h2 className="font-poppins font-bold text-yellow-600 p-1">
                   {book.title}
                 </h2>
-              </Link>
+              </Link> */}
+
+
               <h2 className="font-poppins font-bold p-1">{book.author}</h2>
               <h3 className="font-open p-1">Genre : {book.cat}</h3>
               <h3 className="font-open p-1">Editeur : {book.publisher}</h3>
@@ -84,9 +92,12 @@ const Library = () => {
             </div>
           ))}
         </div>
-      ) : (
-        <span>{navigate("/*")}</span>
-      )}
+      ) 
+      // : (
+      //   <span>{navigate("/*")}</span>
+      // )
+      
+      }
     </div>
   );
 };
