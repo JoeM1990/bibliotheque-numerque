@@ -36,19 +36,19 @@ const Library = () => {
       </Helmet>
 
       <div className="flex flex-row justify-between items-center lg:ml-10 mr-10">
-        { (
+        {currentUser ? (
           <h3 className="p-6 lg:m-6 font-poppins text-yellow-900 dark:text-yellow-600">
             Bienvenue dans ta bibliothèque numérique,{" "}
             <span className="font-bold">{currentUser?.username} </span>!
           </h3>
         )
-        //  : (
-        //   <span></span>
-        // )
+         : (
+          <span></span>
+        )
         
         }
 
-        {/* {currentUser ? (
+        {currentUser ? (
           <button
             onClick={logout}
             type="button"
@@ -59,30 +59,30 @@ const Library = () => {
           </button>
         ) : (
           <span>{navigate("/*")}</span>
-        )} */}
+        )}
       </div>
 
-      {(
+      {currentUser ?(
         <div className="lg:grid grid-cols-4 gap-2 justify-between lg:ml-24">
           {books.map((book) => (
             <div
               key={book.id}
               className="font-open m-6 transform transition duration-400 hover:scale-110 text-center w-72 p-2 bg-white rounded-lg border border-gray-200 shadow-md"
             >
-              {book.img && (
+              {book.imageData && (
                 <img
-                  src={book.img}
+                  src={book.imageData}
                   alt="Couverture du livre"
                   className="rounded-lg h-72 w-64 p-1"
                 />
               )}
 
-              
-              {/* <Link to={`https://fakeapi-wqoi.onrender.com/books/${book.id}`}>
+
+              <Link to={`https://fakeapi-wqoi.onrender.com/books/${book.id}`}>
                 <h2 className="font-poppins font-bold text-yellow-600 p-1">
                   {book.title}
                 </h2>
-              </Link> */}
+              </Link>
 
 
               <h2 className="font-poppins font-bold p-1">{book.author}</h2>
@@ -93,9 +93,9 @@ const Library = () => {
           ))}
         </div>
       ) 
-      // : (
-      //   <span>{navigate("/*")}</span>
-      // )
+      : (
+        <span>{navigate("/*")}</span>
+      )
       
       }
     </div>

@@ -16,7 +16,7 @@ const Navbar = () => {
             width="54"
             height="54"
             viewBox="0 0 54 54"
-            alt="logo de l'application créé par Wendy Baqué"
+            alt="logo de l'application créé par Joe Monkila"
           />
         </Link>
       </div>
@@ -28,6 +28,7 @@ const Navbar = () => {
           >
             Tous les livres
           </Link>
+          
           <Link
             to="/add"
             className="p-2 text-base font-normal font-poppins  block mt-4 lg:inline-block lg:mt-0 text-white hover:text-cyan-100 mr-4 transition duration-300"

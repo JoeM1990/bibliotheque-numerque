@@ -23,7 +23,7 @@ const Signin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-     // await signin(inputs);
+      await signin(inputs);
       navigate("/library");
     } catch (err) {
       setError(err.response.data);

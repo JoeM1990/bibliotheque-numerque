@@ -9,7 +9,7 @@ export const AuthContexProvider = ({ children }) => {
   );
 
   const signin = async (inputs) => {
-    const res = await axios.post("/auth/signin", inputs);
+    const res = await axios.post("https://fakeapi-wqoi.onrender.com/usersj", inputs);
     setCurrentUser(res.data);
   };
 

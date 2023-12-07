@@ -8,9 +8,7 @@ const Signup = () => {
 
   const [inputs, setInputs] = useState({
     username: "",
-    email: "",
     password: "",
-    img: "",
   });
 
   const [err, setError] = useState(null);
@@ -22,7 +20,7 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("auth/signup", inputs);
+      await axios.post("https://fakeapi-wqoi.onrender.com/usersj", inputs);
       navigate("/signin");
     } catch (err) {
       setError(err.response.data);
@@ -72,23 +70,7 @@ const Signup = () => {
                       name="username"
                     />
                   </label>
-                  <label
-                    htmlFor="email"
-                    className="font-open grid grid-col mb-2 text-sm font-medium text-white dark:text-gray-300"
-                  >
-                    E-mail
-                    <input
-                      className="font-open text-gray-900 m-2 p-4 w-96 rounded-lg shadow-md cursor-pointer font-normal"
-                      type="email"
-                      id="email"
-                      required
-                      aria-required="true"
-                      autoComplete="off"
-                      placeholder="jeanne123@email.com"
-                      onChange={handleChange}
-                      name="email"
-                    />
-                  </label>
+                 
                   <label
                     htmlFor="password"
                     className="font-open grid grid-col mb-2 text-sm font-medium text-white dark:text-gray-300"
@@ -104,27 +86,12 @@ const Signup = () => {
                       name="password"
                     />
                   </label>
-                  <label
-                    htmlFor="img"
-                    className="font-open grid grid-col mb-2 text-sm font-medium text-white dark:text-gray-300"
-                  >
-                    Photo de profil (url)
-                    <input
-                      className="font-open text-gray-900 m-2 p-4 w-96 rounded-lg shadow-md cursor-pointer font-normal"
-                      type="text"
-                      id="img"
-                      required
-                      aria-required="true"
-                      onChange={handleChange}
-                      name="img"
-                    />
-                  </label>
+               
                   <label>
                     <input type="checkbox" className="mr-4 checked:bg-yellow-600" />
                     J'accepte les cookies que mes données soient utilisées
                     conformément aux{" "}
                     <a
-                      href="/legals"
                       alt="Redirection vers la page des mentions légales / RGPD"
                       aria-label="Redirection vers la page des mentions légales / RGPD"
                       target="_blank"
