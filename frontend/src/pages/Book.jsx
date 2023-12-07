@@ -66,7 +66,7 @@ const Book = () => {
           <p className="p-2 m-2 font-normal text-white">
             {book.opinion}/5
           </p>
-          {currentUser.username === book.username && (
+          {currentUser.username === book.author && (
             <div className="grid-cols-1">
               <Link to={`/add?edit=2`} state={book}>
                 <button

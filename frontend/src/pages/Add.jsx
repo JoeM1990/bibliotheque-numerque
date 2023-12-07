@@ -19,6 +19,9 @@ const Add = () => {
 
   const [imageData, setImageData] = useState(
     state?.imageData);
+  
+  const [fileData, setFileData] = useState(
+      state?.fileData);
 
   const convertToBase64 = (event) => {
     const file = event.target.files[0];
@@ -28,6 +31,22 @@ const Add = () => {
 
     reader.onload = () => {
       setImageData(reader.result,
+      );
+    };
+
+    reader.onerror = (error) => {
+      console.log('Error: ', error);
+    };
+  };
+
+  const convertFileToBase64 = (event) => {
+    const file = event.target.files[0];
+
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+
+    reader.onload = () => {
+      setFileData(reader.result,
       );
     };
 
@@ -52,6 +71,7 @@ const Add = () => {
             desc,
             cat,
             imageData,
+            fileData
           })
         : 
         await axios.post(`https://fakeapi-wqoi.onrender.com/books/`, {
@@ -62,6 +82,7 @@ const Add = () => {
             desc,
             cat,
             imageData,
+            fileData,
             date: moment(Date.now()).format("YYYY-MM-DD HH:mm:ss"),
           });
       navigate("/library");
@@ -78,13 +99,14 @@ const Add = () => {
       publisher !== "" &&
       opinion !== "" &&
       cat !== "" &&
-      imageData !== ""
+      imageData !== "" &&
+      fileData !== ""
     ) {
       setBtn(true);
     } else if (btn) {
       setBtn(false);
     }
-  }, [title, desc, author, publisher, opinion, cat, imageData, btn]);
+  }, [title, desc, author, publisher, opinion, cat, imageData, fileData, btn]);
 
   return (
     <div className="lg:flex lg:flex-row md:flex-col sm:flex-col bg-slate-100 dark:bg-slate-800 overflow-hidden justify-center">
@@ -229,6 +251,27 @@ const Add = () => {
                 onChange={convertToBase64} 
                 className="text-gray-900 m-2 p-4 w-96 rounded-lg shadow-md cursor-pointer font-normal"
                 accept="image/*" />
+            </label>
+
+            <label
+              htmlFor="img"
+              className="font-open grid grid-col mb-2 text-sm font-medium text-black dark:text-white"
+            >
+             Fichier
+              {/* <input
+                type="text"
+                id="img"
+                name="img"
+                className="text-gray-900 m-2 p-4 w-96 rounded-lg shadow-md cursor-pointer font-normal"
+                onChange={(e) => setImg(e.target.value)}
+                value={img}
+              ></input> */}
+              <input 
+                name="fileData"
+                type="file" 
+                onChange={convertFileToBase64} 
+                className="text-gray-900 m-2 p-4 w-96 rounded-lg shadow-md cursor-pointer font-normal"
+                accept="application/pdf" />
             </label>
 
             {btn ? (
