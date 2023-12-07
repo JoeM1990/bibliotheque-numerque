@@ -7,17 +7,16 @@ export default function Footer() {
         Copyright© 2023. All Rights Reserved.
       </span>
       <ul className="flex flex-wrap  items-center text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
-        {/* <li>
+        <li>
           <a
-            href="https://wendybaquedevweb.netlify.app/"
+            href="https://www.monkila-tech.com/"
             target="_blank"
             rel="noreferrer"
-            alt="portfolio de Wendy Baqué"
             className="font-poppins mr-3 hover:underline hover:text-yellow-600"
           >
-            Made with ❤ by Wendy Baqué
+            Design by ❤ MK-TECH
           </a>
-        </li> */}
+        </li>
 
         <li>
           <a

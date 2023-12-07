@@ -18,7 +18,7 @@ const Book = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`/books/${bookId}`);
+        const res = await axios.get(`https://fakeapi-wqoi.onrender.com/books/${bookId}`);
         setBook(res.data);
       } catch (err) {
         console.log(err);
@@ -29,7 +29,7 @@ const Book = () => {
 
   const handleDelete = async (e) => {
     try {
-      await axios.delete(`/books/${bookId}`);
+      await axios.delete(`https://fakeapi-wqoi.onrender.com/books/${bookId}`);
       navigate("/library");
     } catch (err) {
       console.log(err);

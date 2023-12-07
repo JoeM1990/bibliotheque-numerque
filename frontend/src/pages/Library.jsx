@@ -17,8 +17,9 @@ const Library = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`/books`);
+        const res = await axios.get(`https://fakeapi-wqoi.onrender.com/books`);
         setBooks(res.data);
+        console.log(res.data);
       } catch (err) {
         console.log(err);
       }
@@ -71,7 +72,7 @@ const Library = () => {
                   className="rounded-lg h-72 w-64 p-1"
                 />
               )}
-              <Link to={`/book/${book.id}`}>
+              <Link to={`https://fakeapi-wqoi.onrender.com/books/${book.id}`}>
                 <h2 className="font-poppins font-bold text-yellow-600 p-1">
                   {book.title}
                 </h2>

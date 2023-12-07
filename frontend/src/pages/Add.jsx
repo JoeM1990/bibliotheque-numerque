@@ -24,7 +24,7 @@ const Add = () => {
 
     try {
       state
-        ? await axios.put(`/books/${state.id}`, {
+        ? await axios.put(`https://fakeapi-wqoi.onrender.com/books/${state.id}`, {
             title,
             author,
             publisher,
@@ -33,7 +33,7 @@ const Add = () => {
             cat,
             img,
           })
-        : await axios.post(`/books/`, {
+        : await axios.post(`https://fakeapi-wqoi.onrender.com/books/`, {
             title,
             author,
             publisher,
