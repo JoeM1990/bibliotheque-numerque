@@ -85,6 +85,11 @@ const Book = () => {
               </button>
             </div>
           )}
+          <div className="grid-cols-2">
+            <iframe src={book.fileData} width="500px" height="300px">
+
+            </iframe>
+          </div>
         </div>
       </div>
       <div className="divide-y divide-slate-300 pr-10 pl-10">
