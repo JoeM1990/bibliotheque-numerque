@@ -78,7 +78,7 @@ const Library = () => {
               )}
 
 
-              <Link to={`https://fakeapi-wqoi.onrender.com/books/${book.id}`}>
+              <Link to={`/book/${book.id}`}>
                 <h2 className="font-poppins font-bold text-yellow-600 p-1">
                   {book.title}
                 </h2>

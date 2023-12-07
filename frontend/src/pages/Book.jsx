@@ -29,7 +29,7 @@ const Book = () => {
 
   const handleDelete = async (e) => {
     try {
-      await axios.delete(`https://fakeapi-wqoi.onrender.com/books/${bookId}`);
+      //await axios.delete(`https://fakeapi-wqoi.onrender.com/books/${bookId}`);
       navigate("/library");
     } catch (err) {
       console.log(err);
@@ -47,23 +47,23 @@ const Book = () => {
       <div className="flex flex-row justify-around p-2">
         <img
           className="w-72 h-96 p-2 m-2 rounded-lg	drop-shadow-md"
-          src={book?.img}
+          src={book?.imageData}
           alt="Couverture du livre"
         />
 
         <div>
-          {book.userImg && (
+          {/* {book.userImg && (
             <img
               className="w-20 h-20 rounded-full p-2 m-2"
-              src={book.userImg}
+              src={book.imageData}
               alt="Avatar de l'utilisateur"
             />
-          )}
+          )} */}
           <span className="p-2 m-2 font-poppins font-bold">
             {book.username}
           </span>
-          <p className="p-2 m-2 font-normal">{moment(book.date).fromNow()}</p>
-          <p className="p-2 m-2 font-normal text-yellow-600">
+          <p className="p-2 m-2 font-normal text-white">{moment(book.date).fromNow()}</p>
+          <p className="p-2 m-2 font-normal text-white">
             {book.opinion}/5
           </p>
           {currentUser.username === book.username && (
@@ -88,9 +88,9 @@ const Book = () => {
         </div>
       </div>
       <div className="divide-y divide-slate-300 pr-10 pl-10">
-        <h2 className="p-2 font-poppins font-bold">{book.title}</h2>
-        <h2 className="p-2 font-poppins">{book.author}</h2>
-        <p className="text-justify p-2 font-normal leading-6">{book.desc}</p>
+        <h2 className="p-2 font-poppins font-bold text-white">{book.title}</h2>
+        <h2 className="p-2 font-poppins text-white">{book.author}</h2>
+        <p className="text-justify p-2 font-normal leading-6 text-white">{book.desc}</p>
       </div>
     </div>
   );
