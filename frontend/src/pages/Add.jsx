@@ -17,6 +17,26 @@ const Add = () => {
   const [desc, setDesc] = useState(state?.desc || "");
   const [opinion, setOpinion] = useState(state?.opinion || "");
 
+  const [imageData, setImageData] = useState(
+    state?.imageData);
+
+  const convertToBase64 = (event) => {
+    const file = event.target.files[0];
+
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+
+    reader.onload = () => {
+      setImageData(reader.result,
+      );
+    };
+
+    reader.onerror = (error) => {
+      console.log('Error: ', error);
+    };
+  };
+
+
   const [btn, setBtn] = useState(false);
 
   const handleSubmit = async (e) => {
@@ -31,16 +51,17 @@ const Add = () => {
             opinion,
             desc,
             cat,
-            img,
+            imageData,
           })
-        : await axios.post(`https://fakeapi-wqoi.onrender.com/books/`, {
+        : 
+        await axios.post(`https://fakeapi-wqoi.onrender.com/books/`, {
             title,
             author,
             publisher,
             opinion,
             desc,
             cat,
-            img,
+            imageData,
             date: moment(Date.now()).format("YYYY-MM-DD HH:mm:ss"),
           });
       navigate("/library");
@@ -57,13 +78,13 @@ const Add = () => {
       publisher !== "" &&
       opinion !== "" &&
       cat !== "" &&
-      img !== ""
+      imageData !== ""
     ) {
       setBtn(true);
     } else if (btn) {
       setBtn(false);
     }
-  }, [title, desc, author, publisher, opinion, cat, img, btn]);
+  }, [title, desc, author, publisher, opinion, cat, imageData, btn]);
 
   return (
     <div className="lg:flex lg:flex-row md:flex-col sm:flex-col bg-slate-100 dark:bg-slate-800 overflow-hidden justify-center">
@@ -194,14 +215,20 @@ const Add = () => {
               className="font-open grid grid-col mb-2 text-sm font-medium text-black dark:text-white"
             >
               Couverture du livre (url)
-              <input
+              {/* <input
                 type="text"
                 id="img"
                 name="img"
                 className="text-gray-900 m-2 p-4 w-96 rounded-lg shadow-md cursor-pointer font-normal"
                 onChange={(e) => setImg(e.target.value)}
                 value={img}
-              ></input>
+              ></input> */}
+              <input 
+                name="imageData"
+                type="file" 
+                onChange={convertToBase64} 
+                className="text-gray-900 m-2 p-4 w-96 rounded-lg shadow-md cursor-pointer font-normal"
+                accept="image/*" />
             </label>
 
             {btn ? (
