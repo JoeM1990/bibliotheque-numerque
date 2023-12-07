@@ -35,7 +35,7 @@ const Signin = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>Connexion</title>
-        <link rel="canonical" href="https://mabibliothequenumerique.vercel.app/signin" />
+      
       </Helmet>
       <div className="bg-slate-100 dark:bg-slate-800">
         <div

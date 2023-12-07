@@ -8,7 +8,7 @@ const Home = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>Accueil</title>
-        {/* <link rel="canonical" href="https://mabibliothequenumerique.vercel.app/" /> */}
+      
       </Helmet>
       <Header />
     </div>

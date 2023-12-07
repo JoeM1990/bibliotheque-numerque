@@ -16,7 +16,7 @@ const Page404 = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>Oups ! Error 404</title>
-        <link rel="canonical" href="http://mysite.com/example" />
+     
       </Helmet>
       <div className="flex items-center justify-center w-screen h-screen">
         <div className="px-4 lg:py-12">

@@ -53,7 +53,7 @@ function Contact() {
       <Helmet>
         <meta charSet="utf-8" />
         <title>Contact</title>
-        <link rel="canonical" href="https://mabibliothequenumerique.vercel.app/contact" />
+        
       </Helmet>
       <div className="flex flex-col font-bold justify-center items-center text-center ">
         <h2 className="font-poppins text-xl text-center text-black dark:text-white font-bold m-2 p-2">
