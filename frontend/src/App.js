@@ -16,7 +16,6 @@ import Contact from "../src/pages/Contact";
 import Page404 from "../src/pages/Page404";
 import ButtonTop from './components/ButtonTop';
 import Book from './pages/Book';
-import Legals from './pages/Legals';
 
 
 function App() {
@@ -33,7 +32,6 @@ function App() {
           <Route path="/search" element={<Search />} />
           <Route path="/book/:id" element={<Book />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/legals" element={<Legals />} />
           <Route path="*" element={<Page404 />} />
         </Routes>
       </Router>

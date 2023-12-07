@@ -115,90 +115,49 @@ const Add = () => {
             <h2 className="m-2 p-2 font-open grid grid-col mb-2 text-sm font-medium text-black dark:text-white">
               Genre du livre
             </h2>
-            <label htmlFor="massecritique">
+            <label htmlFor="livre">
               {" "}
-              Masse Critique
+              Livre
               <input
                 type="radio"
                 name="cat"
                 required
-                value="massecritique"
-                id="massecritique"
+                value="livre"
+                id="livre"
                 onChange={(e) => setCat(e.target.value)}
-                className="m-2 p-2 text-white"
-                checked={cat === "massecritique"}
+                className="m-2 p-2 text-white dark:text-white"
+                checked={cat === "livre"}
               />
             </label>
-            <label htmlFor="coupdecoeur">
+            <label htmlFor="tfc">
               {" "}
-              Coup de coeur
+              Tfc
               <input
                 type="radio"
                 name="cat"
                 required
-                value="coupdecoeur"
-                id="coupdecoeur"
-                onChange={(e) => setCat(e.target.value)}
-                className="m-2 p-2"
-                checked={cat === "coupdecoeur"}
-              />
-            </label>
-            <label htmlFor="feelgood">
-              {" "}
-              Feel-Good
-              <input
-                type="radio"
-                name="cat"
-                required
-                value="feelgood"
-                id="feelgood"
+                value="tfc"
+                id="tfc"
                 onChange={(e) => setCat(e.target.value)}
                 className="m-2 p-2"
-                checked={cat === "feelgood"}
+                checked={cat === "tfc"}
               />
             </label>
-            <label htmlFor="romance">
+            <label htmlFor="memoire">
               {" "}
-              Romance
+              Memoire
               <input
                 type="radio"
                 name="cat"
                 required
-                value="romance"
-                id="romance"
+                value="memoire"
+                id="memoire"
                 onChange={(e) => setCat(e.target.value)}
                 className="m-2 p-2"
-                checked={cat === "romance"}
+                checked={cat === "memoire"}
               />
             </label>
-            <label htmlFor="thriller">
-              {" "}
-              Thriller
-              <input
-                type="radio"
-                name="cat"
-                required
-                value="thriller"
-                id="thriller"
-                onChange={(e) => setCat(e.target.value)}
-                className="m-2 p-2"
-                checked={cat === "thriller"}
-              />
-            </label>
-            <label htmlFor="divers">
-              {" "}
-              Divers
-              <input
-                type="radio"
-                name="cat"
-                required
-                value="divers"
-                id="divers"
-                onChange={(e) => setCat(e.target.value)}
-                className="m-2 p-2"
-                checked={cat === "divers"}
-              />
-            </label>
+           
             <label
               htmlFor="publisher"
               className="font-open grid grid-col mb-2 text-sm font-medium text-black dark:text-white"
