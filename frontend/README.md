@@ -1,5 +1,5 @@
 # Projet
-"Ma bibliothèque numérique" est le projet que je souhaite proposer pour mon passage de titre RNCP de développeuse web, mêlant front-end et back-end.
+"Ma bibliothèque numérique"
 Ce projet est réalisé avec React, Tailwindcss, Express, Node et MySQL
 
 # Trello 
